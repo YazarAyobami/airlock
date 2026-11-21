@@ -1,6 +1,6 @@
 """`scripts/README.md` must be the directory's index, in both directions (issue #98).
 
-The scripts under `scripts/` are run by hand against this repository, and three of them write into
+The scripts under `scripts/` are run by hand against this repository, and four of them write into
 it. Their safety notes lived only in their own headers, so nothing tied the documentation page to
 the directory: a new script could appear with no row, and a row could survive a deleted script. This
 module closes both halves by comparing the table with the files.
@@ -76,7 +76,7 @@ def test_the_index_lists_the_scripts_the_directory_holds() -> None:
     """The other direction of the same equality, stated as content.
 
     A reader checking whether the guard works needs to know what it is guarding, not only that it
-    did not fire: this names the six entry points the page is supposed to document.
+    did not fire: this names the entry points the page is supposed to document.
     """
     files = entry_points(SCRIPTS_DIR)
     rows = documented_rows(INDEX.read_text(encoding="utf-8"))
