@@ -164,9 +164,7 @@ def test_the_baseline_pattern_clears_both_bounds(baseline_ms: float) -> None:
     which would make every other assertion in the module noise.
     """
     test_redos = _redos()
-    measured = test_redos.worst_line_ms(
-        re.compile(BASELINE_SOURCE), baseline_bait(test_redos)
-    )
+    measured = test_redos.worst_line_ms(re.compile(BASELINE_SOURCE), baseline_bait(test_redos))
     assert measured < test_redos.PER_LINE_BUDGET_MS
     assert measured < calibrated_ceiling_ms(baseline_ms)
 
