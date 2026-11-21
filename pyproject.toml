@@ -53,7 +53,9 @@ addopts = ["--strict-markers"]
 filterwarnings = [
     "error",
 ]
-markers = []
+markers = [
+  "perf: file-count scale measurement, gated on AIRLOCK_PERF=1 (issue #88).",
+]
 
 [tool.ruff]
 line-length = 100
